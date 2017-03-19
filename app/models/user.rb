@@ -5,6 +5,8 @@ class User < ApplicationRecord
   	validates :email, presence: true, length: { maximum: 255 },
                     format: { with: VALID_EMAIL_REGEX },
                     uniqueness: {case_sensitive: false}
-    has_secure_password
+    has_secure_password #used with bcrypt
+    					#allows password_digest to be stored
+    					#virtual attributes password and password_confirmation
     validates :password, presence: true, length: { minimum: 6 }               
 end
