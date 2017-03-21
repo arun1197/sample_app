@@ -10,7 +10,7 @@ class User < ApplicationRecord
     has_secure_password #used with bcrypt
     					#allows password_digest to be stored
     					#virtual attributes password and password_confirmation
-    validates :password, presence: true, length: { minimum: 6 }
+    validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
 
 
     #User.{etc} -> class method
